@@ -22,7 +22,7 @@ def section(data, head , tail, drawdata,timetick):
 
 
 def quick_sort(data, head, tail, drawdata, timetick):
-    start = time.time()
+    start = time.perf_counter()
     if head < tail:
         sectionIdx = section(data, head , tail, drawdata,timetick)
 
@@ -30,7 +30,7 @@ def quick_sort(data, head, tail, drawdata, timetick):
         quick_sort(data, head, sectionIdx-1, drawdata, timetick)
         # right section
         quick_sort(data, sectionIdx+1, tail, drawdata, timetick)
-    elapsed_time_fl = (time.time() - start)
+    elapsed_time_fl = (time.perf_counter() - start)
     return round(elapsed_time_fl, 2)
 
 def colors(data_length, head, tail, border, current_idx, is_swapping = False ):

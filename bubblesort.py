@@ -2,7 +2,7 @@ import time
 
 def bubble_sort(data,drawdata,timetick):
     #start_time = time.strftime("%H:%M:%S", time.gmtime())
-    start = time.time()
+    start = time.perf_counter()
     for i in range(len(data) - 1):
         for j in range(len(data) -1):
             if data[j]>data[j+1]:
@@ -11,7 +11,7 @@ def bubble_sort(data,drawdata,timetick):
                 time.sleep(timetick)
     drawdata(data,['yellow' for x in range(len(data))])
     # end_time = time.strftime("%H:%M:%S", time.gmtime())
-    elapsed_time_fl = (time.time() - start)
+    elapsed_time_fl = (time.perf_counter() - start)
     return round(elapsed_time_fl,2)
 
 

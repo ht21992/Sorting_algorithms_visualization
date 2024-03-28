@@ -2,9 +2,9 @@ import time
 
 
 def merge_sort(data, drawData, timeTick):
-    start = time.time()
+    start = time.perf_counter()
     merge_sort_algorithm(data, 0, len(data) - 1, drawData, timeTick)
-    elapsed_time_fl = (time.time() - start)
+    elapsed_time_fl = (time.perf_counter() - start)
     return round(elapsed_time_fl, 2)
 
 def merge_sort_algorithm(data, left, right, drawData, timeTick):
